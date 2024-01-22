@@ -1,6 +1,7 @@
 import java.util.*;
 import LB.Matrix;
 
+
 class File5
 {
     public static void main(String[] args)
@@ -20,6 +21,8 @@ class File5
         mobj.Display();
 
         mobj.SwapRows();
+        System.out.println("\nAfter swap : ");
+        mobj.Display();      
     }
 }
 
@@ -32,19 +35,42 @@ class MyMatrix extends Matrix
 
     public void SwapRows()
     {
-        int i=0, j=0;
-        int iCol = Arr[0].length , iRow = Arr.length;
-       
-        int iTemp = 0;
+        int i=0;
+        int iSize = Arr[0].length;
+        int[] iTemp= new int[iSize]; 
 
-        for(i = 0; i <= iRow ; i++)
+        for(i=0; i<= (iSize) ; i++)
         {
-            for(j = 0; j <= iCol ; j++)
-            {
-               iTemp  = Arr[i][j+1];
-               Arr[i][j+1] = Arr[i][j];
-               Arr[i][j] = iTemp;
-            }
+           
+            System.out.println("row "+ (1+i));
+                iTemp =  Arr[i];
+                Arr[i] =  Arr[iSize-1-(i)];
+                Arr[iSize-1-(i)] = iTemp;
+            
         }
+
+        // iTemp = Arr[0];
+        // Arr[0] = Arr[1];
+        // Arr[1] = iTemp;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
